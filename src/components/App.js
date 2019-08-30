@@ -1,4 +1,10 @@
 import React from 'react';
+import firebase from 'firebase';
+
+import 'firebase/firestore';
+import { firestore } from './plugins/firebase';
+
+
 class App extends React.Component {
   state = {
     todo: '',
