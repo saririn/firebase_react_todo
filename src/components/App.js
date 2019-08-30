@@ -1,8 +1,8 @@
 import React from 'react';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 import 'firebase/firestore';
-import { firestore } from './plugins/firebase';
+import { firestore } from '../plugins/firebase';
 
 
 class App extends React.Component {
@@ -31,6 +31,15 @@ class App extends React.Component {
   handleSubmit = (event) => {
     // grab original todos from state
     const { todos } = this.state;
+
+    console.log('test')
+    firestore.collection('tasks').add({
+      text: event.currentTarget.todo.value,
+      created_at: new Date(),
+      user_id: this.state.userId
+    });
+
+
     // todo text is result
     // append new todo with default state to todos
     this.setState({
