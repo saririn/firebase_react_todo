@@ -161,7 +161,7 @@ class App extends Component {
         <AppBar position='static'>
           <Toolbar>
             <Typography type='title' color='inherit' style={{ fontSize: '20px' }}>
-              かきすてTodo
+              X-HACK React Firebase Todo
             </Typography>
           </Toolbar>
         </AppBar>

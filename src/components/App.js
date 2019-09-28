@@ -1,3 +1,5 @@
+// このファイルは今は使ってない
+// https://medium.com/@mannycodes/build-a-react-todo-app-with-firebase-part-1-ui-33a34b86f1e6
 import React from 'react';
 import firebase from 'firebase/app';
 
