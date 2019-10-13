@@ -26,7 +26,7 @@ class App extends Component {
       tasks: []
     };
     this.getTasksData = this.getTasksData.bind(this);
-    this.login = this.login.bind(this);
+    // this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.getText = this.getText.bind(this);
     this.addTask = this.addTask.bind(this);
@@ -51,7 +51,6 @@ class App extends Component {
   getTasksData() {
     firestore.collection('tasks')
       .where('user_id', '==', this.state.userId)
-      .orderBy('created_at')
       .get()
       .then(snapShot => {
         let tasks = [];
@@ -68,8 +67,9 @@ class App extends Component {
   }
 
   login() {
+    console.log(this)
     firebase.auth().signInAnonymously().then(e => {
-      console.log(e);
+    //   console.log(e);
       this.setState({
         isLogin: true,
         userId: firebase.auth().currentUser.uid
@@ -161,7 +161,7 @@ class App extends Component {
         <AppBar position='static'>
           <Toolbar>
             <Typography type='title' color='inherit' style={{ fontSize: '20px' }}>
-              X-HACK React Firebase Todo
+              Nagaoka React Firebase Todo
             </Typography>
           </Toolbar>
         </AppBar>
